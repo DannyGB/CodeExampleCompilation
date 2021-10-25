@@ -14,7 +14,8 @@ namespace CodeExampleCompilation
         {
             _menu = new Menu
             {
-                { "1", new NavigationItem(@"[bold blue]1:[/] Code complexity.", () => (new CodeComplexity.Index()).Render()) },
+                { "1", new NavigationItem(@"[bold blue]1:[/] Code complexity.", () => (new Topics.CodeComplexity.Index()).Render()) },
+                { "2", new NavigationItem(@"[bold blue]2:[/] Entity Framework.", () => (new Topics.EntityFramework.Index()).Render()) },
                 { Constants.QUIT_KEY, new NavigationItem("[bold blue]Q:[/] Quit.", () => {}) }
             };
         }

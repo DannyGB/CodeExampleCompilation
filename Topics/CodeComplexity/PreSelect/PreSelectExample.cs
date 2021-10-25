@@ -4,7 +4,7 @@ using CodeExampleCompilation.Extensions;
 using CodeExampleCompilation.Infrastructure;
 using Spectre.Console;
 
-namespace CodeExampleCompilation.CodeComplexity.PreSelect
+namespace CodeExampleCompilation.Topics.CodeComplexity.PreSelect
 {
     public class PreSelectExample : Page
     {

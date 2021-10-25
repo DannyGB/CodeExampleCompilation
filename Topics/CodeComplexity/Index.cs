@@ -2,7 +2,7 @@ using CodeExampleCompilation.Extensions;
 using CodeExampleCompilation.Infrastructure;
 using Spectre.Console;
 
-namespace CodeExampleCompilation.CodeComplexity
+namespace CodeExampleCompilation.Topics.CodeComplexity
 {
     public class Index : Page
     {

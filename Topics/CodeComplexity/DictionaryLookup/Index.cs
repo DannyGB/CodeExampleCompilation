@@ -2,7 +2,7 @@ using CodeExampleCompilation.Extensions;
 using CodeExampleCompilation.Infrastructure;
 using Spectre.Console;
 
-namespace CodeExampleCompilation.CodeComplexity.DictionaryLookup
+namespace CodeExampleCompilation.Topics.CodeComplexity.DictionaryLookup
 {
     public class Index : Page
     {
