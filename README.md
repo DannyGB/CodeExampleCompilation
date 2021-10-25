@@ -30,6 +30,6 @@ Displays pages of content and associated navigation in a console application
 
 © dannygb
 
-This software is provided as-is under the MIT license. For more information see [LICENSE](https://github.com/DannyGB/CodeExampleCompilation/.github/LICENSE.md).
+This software is provided as-is under the MIT license. For more information see [LICENSE](https://github.com/DannyGB/CodeExampleCompilation/blob/master/LICENSE).
 
 * For Spectre.Console, see https://github.com/spectreconsole/spectre.console/blob/main/LICENSE.md
