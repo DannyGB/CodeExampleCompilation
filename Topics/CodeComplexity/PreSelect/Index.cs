@@ -6,9 +6,9 @@ namespace CodeExampleCompilation.Topics.CodeComplexity.PreSelect
 {
     public class Index : Page
     {
-         public Index() : base("[green]IEnumerable pre-selection[/]", new Menu
+         public Index() : base("IEnumerable pre-selection", new Menu
             {
-                { "1", new NavigationItem("[bold blue]1:[/] Run example", () => new PreSelectExample().Render()) },
+                { "1", new NavigationItem("Run example", () => new PreSelectExample().Render()) },
             })
         {
         }

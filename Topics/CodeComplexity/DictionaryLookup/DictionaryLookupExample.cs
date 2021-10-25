@@ -9,7 +9,7 @@ namespace CodeExampleCompilation.Topics.CodeComplexity.DictionaryLookup
     {
         private IDictionary<int, string> _dict;
 
-        public DictionaryLookupExample() : base("[green]Running switch to map example[/]")
+        public DictionaryLookupExample() : base("Running switch to map example")
         {
             _dict = new Dictionary<int, string>()
             {

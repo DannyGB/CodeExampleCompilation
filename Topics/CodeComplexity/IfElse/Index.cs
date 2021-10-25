@@ -6,9 +6,9 @@ namespace CodeExampleCompilation.Topics.CodeComplexity.IfElse
 {
     public class Index : Page
     {
-        public Index() : base("[green]Replacing if/else[/]", new Menu
+        public Index() : base("Replacing if/else", new Menu
             {
-                { "1", new NavigationItem("[bold blue]1:[/] Run example", () => new IfElseExample().Render()) },
+                { "1", new NavigationItem("Run example", () => new IfElseExample().Render()) },
             })
         {
         }
@@ -60,6 +60,6 @@ if/else statements can also be replaced using the ternary operator when the resu
 Nested ternarys should be used sparingly as they can reduce readability
 
     [bold blue]return (x == 1 && y == 2) ? ""Foo"" : x > 1 ? ""Bar"" : ""Bee"";[/]
-    ".ToMarkup();        
+    ".ToMarkup();
     }
 }

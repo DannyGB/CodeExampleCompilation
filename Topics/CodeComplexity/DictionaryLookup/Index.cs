@@ -1,3 +1,4 @@
+using System.Text;
 using CodeExampleCompilation.Extensions;
 using CodeExampleCompilation.Infrastructure;
 using Spectre.Console;
@@ -6,9 +7,9 @@ namespace CodeExampleCompilation.Topics.CodeComplexity.DictionaryLookup
 {
     public class Index : Page
     {
-        public Index() : base("[green]Replacing switch with a map[/]", new Menu
+        public Index() : base("Replacing switch with a map", new Menu
         {
-            { "1", new NavigationItem("[bold blue]1:[/] Run example", () => new DictionaryLookupExample().Render()) }
+            { "1", new NavigationItem("Run example", () => new DictionaryLookupExample().Render()) }
         })
         {
         }
@@ -16,7 +17,7 @@ namespace CodeExampleCompilation.Topics.CodeComplexity.DictionaryLookup
         public override Markup Content() => @$"A switch statement can be replaced with a dictionary lookup that will make the code much less complex and prone to bugs and easier to read and maintain.
 Considering the below example:
     
-    [bold blue]switch(x)
+    switch(x)
     {{
         case 1:
             return ""One"";
@@ -26,7 +27,7 @@ Considering the below example:
             return ""Three"";
         default:
             return ""Not found"";
-    }}[/]
+    }}
 
 This can be replaced with a dictionary lookup such as below:
 
@@ -54,5 +55,6 @@ This pattern can be quite powerful when the value in the dictionary lookup is a 
 
     return (_dict.ContainsKey(x) ? _dict[[x]] : CalculateBaseMemberBenefits)();[/]
 ".ToMarkup();
+
     }
 }

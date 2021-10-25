@@ -6,7 +6,7 @@ namespace CodeExampleCompilation.Topics.EntityFramework.ReturningIQueryable
 {
     public class Index : Page
     {
-        public Index() : base("[green]IQueryable[/]")
+        public Index() : base("IQueryable")
         {
         }
 

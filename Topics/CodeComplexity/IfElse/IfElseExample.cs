@@ -6,7 +6,7 @@ namespace CodeExampleCompilation.Topics.CodeComplexity.IfElse
 {
     public class IfElseExample : Page
     {
-        public IfElseExample() : base("[green]Running if/else example[/]")
+        public IfElseExample() : base("Running if/else example")
         {
         }
 

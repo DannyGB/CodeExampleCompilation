@@ -10,7 +10,7 @@ namespace CodeExampleCompilation.Topics.CodeComplexity.PreSelect
     {
         private IEnumerable<(int, bool)> _list;
 
-        public PreSelectExample() : base("[green]Running pre-select example[/]")
+        public PreSelectExample() : base("Running pre-select example")
         {
             _list = new List<(int, bool)>
             {

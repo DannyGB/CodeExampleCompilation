@@ -6,11 +6,11 @@ namespace CodeExampleCompilation.Topics.CodeComplexity
 {
     public class Index : Page
     {
-        public Index() : base("[green]Code Complexity[/]", new Menu
+        public Index() : base("Code Complexity", new Menu
             {
-                { "1", new NavigationItem("[bold blue]1:[/] Replacing if/else.", () => new IfElse.Index().Render()) },
-                { "2", new NavigationItem("[bold blue]2:[/] Using IEnumerable Pre-select.", () => new PreSelect.Index().Render()) },
-                { "3", new NavigationItem("[bold blue]3:[/] Replacing switch with a map.", () => new DictionaryLookup.Index().Render()) }
+                { "1", new NavigationItem("Replacing if/else.", () => new IfElse.Index().Render()) },
+                { "2", new NavigationItem("Using IEnumerable Pre-select.", () => new PreSelect.Index().Render()) },
+                { "3", new NavigationItem("Replacing switch with a map.", () => new DictionaryLookup.Index().Render()) }
             })
         {
         }

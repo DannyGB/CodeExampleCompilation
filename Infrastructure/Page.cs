@@ -12,9 +12,9 @@ namespace CodeExampleCompilation.Infrastructure
 
         public Page(string contentHeader, Menu menu = default(Menu))
         {
-            _contentHeader = contentHeader;
+            _contentHeader = contentHeader.AddHeaderStyle();
             _menu = menu ?? new Menu();
-            _menu.Add(Constants.BACK_KEY, new NavigationItem("[bold blue]B:[/] Back", () => {}));
+            _menu.Add(Constants.BACK_KEY, new NavigationItem("Back", () => {}));
         }
 
         public void Render()
