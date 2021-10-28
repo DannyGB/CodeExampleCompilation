@@ -1,10 +1,11 @@
+using System.Threading.Tasks;
 using Spectre.Console;
 
 namespace CodeExampleCompilation.Infrastructure.Partials
 {
-    public class Welcome
+    public class Welcome : IWelcome
     {
-        public static void Render()
+        public void Render()
         {
             var grid = new Grid()
                 .AddColumn()

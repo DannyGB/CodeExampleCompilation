@@ -8,22 +8,29 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="5.0.0" />
+    <PackageReference Include="NLog.Extensions.Logging" Version="1.7.4" />
     <PackageReference Include="Spectre.Console" Version="0.42.0" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(Configuration)' == 'Debug'">
-    <None Update="Topics/CodeComplexity/IfElse/Content.json" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Topics/CodeComplexity/PreSelect/Content.json" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Topics/CodeComplexity/DictionaryLookup/Content.json" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Topics/CodeComplexity/Content.json" CopyToOutputDirectory="PreserveNewest" />  
-    <None Update="Topics/EntityFramework/ReturningOnlyNeededColumns/Content.json" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Topics/EntityFramework/ReturningIQueryable/Content.json" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Topics/EntityFramework/Content.json" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="appsettings.developer.json" CopyToOutputDirectory="PreserveNewest" />
+  <ItemGroup>
+    <None Update="Topics/CodeComplexity/IfElse/Content.json" CopyToOutputDirectory="Always" />
+    <None Update="Topics/CodeComplexity/PreSelect/Content.json" CopyToOutputDirectory="Always" />
+    <None Update="Topics/CodeComplexity/DictionaryLookup/Content.json" CopyToOutputDirectory="Always" />
+    <None Update="Topics/CodeComplexity/Content.json" CopyToOutputDirectory="Always" />  
+    <None Update="Topics/EntityFramework/ReturningOnlyNeededColumns/Content.json" CopyToOutputDirectory="Always" />
+    <None Update="Topics/EntityFramework/ReturningIQueryable/Content.json" CopyToOutputDirectory="Always" />
+    <None Update="Topics/EntityFramework/Content.json" CopyToOutputDirectory="Always" />
+    <None Update="appsettings.json" CopyToOutputDirectory="Always" />    
+    <None Update="nlog.config" CopyToOutputDirectory="Always" />
  </ItemGroup>
+
+  <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+    <None Update="appsettings.developer.json" CopyToOutputDirectory="Always" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CodeExampleCompilation.Infrastructure\CodeExampleCompilation.Infrastructure.csproj" />

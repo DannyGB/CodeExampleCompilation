@@ -1,9 +1,10 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace CodeExampleCompilation.Application
 {
     public interface IContentReader
     {
-        IEnumerable<ContentMetaData> Read(string root);
+        Task<IEnumerable<ContentMetaData>> Read(string root);
     }
 }

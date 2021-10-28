@@ -15,7 +15,7 @@ namespace CodeExampleCompilation.Extensions
             for (int i = 0; i < list.Count(); i++)
             {
                 var item = list[i];
-                menu.Add((i+1).ToString(), new NavigationItem(list[i].ContentItem.Header, () => new Page(new ContentFile(item.FilePath, item.ContentItem), screen, contentReader).Render()));
+                menu.Add((i+1).ToString(), new NavigationItem(list[i].ContentItem.Header, new Page(new ContentFile(item.FilePath, item.ContentItem), screen, contentReader).Render));
             }
 
             return menu;

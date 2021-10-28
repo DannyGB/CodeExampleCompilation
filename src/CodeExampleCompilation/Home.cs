@@ -1,7 +1,5 @@
 using Spectre.Console;
 using CodeExampleCompilation.Extensions;
-using CodeExampleCompilation.Infrastructure;
-using System.Linq;
 using Microsoft.Extensions.Options;
 using System;
 using CodeExampleCompilation.Infrastructure.Display;
@@ -9,24 +7,22 @@ using CodeExampleCompilation.Application;
 
 namespace CodeExampleCompilation
 {
-    public class Home : IRender
+    public class Home : PageBase
     {
-        private Menu _menu;
-        private readonly IScreen _screen;
+        private readonly AppSettings _settings;
 
         public Home(IScreen screen, IContentReader contentReader, IOptions<AppSettings> options)
-        { 
+            : base(screen, contentReader)
+        {             
             options = options ?? throw new ArgumentException("options cannot be null", nameof(options));
-            contentReader = contentReader ?? throw new ArgumentException("contentReader cannot be null", nameof(contentReader));
-            _screen = screen ?? throw new ArgumentException("screen cannot be null", nameof(screen));
-
-            _menu = contentReader.Read(options.Value.Root)
-                .ToList()
-                .CreateMenu(contentReader, screen)
-                .AddQuitNavigationItem();
+            _settings = options.Value;
         }
 
-        public void Render() => 
-            _screen.Draw(Constants.QUIT_KEY, () => _menu.GetMenuPanel(), () => new Panel(string.Empty), (action) => _menu.ExecuteAction(action));
+        public override void Render() 
+            => Screen.Draw(Constants.QUIT_KEY,
+                () => GetMenu(_settings.Root).AddQuitNavigationItem().GetMenuPanel(),
+                () => new Panel("Thanks for using this app, I hope you find it both entertaining and useful. Feel free to add your feedback to the [link=https://github.com/DannyGB/CodeExampleCompilation]GitHub repo[/] or add a Pull Request for any issues you might find."),
+                (action) => GetMenu(_settings.Root).ExecuteAction(action))
+            ;
     }
 }
