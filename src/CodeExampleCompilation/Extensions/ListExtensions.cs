@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
+using CodeExampleCompilation.Application;
 using CodeExampleCompilation.Infrastructure;
+using CodeExampleCompilation.Infrastructure.Display;
 
 namespace CodeExampleCompilation.Extensions
 {

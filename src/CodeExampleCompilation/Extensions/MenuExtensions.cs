@@ -1,4 +1,5 @@
 using System.Linq;
+using CodeExampleCompilation.Application;
 using CodeExampleCompilation.Infrastructure;
 using Spectre.Console;
 

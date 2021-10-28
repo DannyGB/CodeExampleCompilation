@@ -1,4 +1,6 @@
-namespace CodeExampleCompilation.Infrastructure
+using CodeExampleCompilation.Domain;
+
+namespace CodeExampleCompilation.Application
 {
     public class ContentMetaData
     {

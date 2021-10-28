@@ -1,6 +1,6 @@
 using Spectre.Console;
 
-namespace CodeExampleCompilation.Partials
+namespace CodeExampleCompilation.Infrastructure.Partials
 {
     public class Welcome
     {

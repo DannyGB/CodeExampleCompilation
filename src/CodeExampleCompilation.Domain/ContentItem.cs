@@ -1,4 +1,4 @@
-namespace CodeExampleCompilation.Infrastructure
+namespace CodeExampleCompilation.Domain
 {
     public class ContentItem
     {

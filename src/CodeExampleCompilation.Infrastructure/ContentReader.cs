@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using CodeExampleCompilation.Application;
+using CodeExampleCompilation.Domain;
 
 namespace CodeExampleCompilation.Infrastructure
 {

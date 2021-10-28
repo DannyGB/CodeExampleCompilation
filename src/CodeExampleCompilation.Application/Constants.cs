@@ -1,4 +1,4 @@
-namespace CodeExampleCompilation.Infrastructure
+namespace CodeExampleCompilation.Application
 {
     public static class Constants
     {

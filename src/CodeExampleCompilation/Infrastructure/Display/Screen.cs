@@ -1,10 +1,9 @@
 using System;
-using CodeExampleCompilation.Partials;
+using CodeExampleCompilation.Infrastructure.Partials;
 using Spectre.Console;
-using CodeExampleCompilation.Extensions;
 using Spectre.Console.Rendering;
 
-namespace CodeExampleCompilation.Infrastructure
+namespace CodeExampleCompilation.Infrastructure.Display
 {
     public class Screen : IScreen
     {

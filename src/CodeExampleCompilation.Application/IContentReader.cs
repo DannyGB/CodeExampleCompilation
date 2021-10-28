@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace CodeExampleCompilation.Infrastructure
+namespace CodeExampleCompilation.Application
 {
     public interface IContentReader
     {

@@ -2,6 +2,8 @@
 using CodeExampleCompilation.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
+using CodeExampleCompilation.Infrastructure.Display;
+using CodeExampleCompilation.Application;
 
 namespace CodeExampleCompilation
 {

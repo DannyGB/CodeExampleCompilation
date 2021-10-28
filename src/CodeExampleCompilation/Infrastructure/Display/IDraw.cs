@@ -1,7 +1,7 @@
 using System;
 using Spectre.Console.Rendering;
 
-namespace CodeExampleCompilation.Infrastructure
+namespace CodeExampleCompilation.Infrastructure.Display
 {
     public interface IDraw
     {

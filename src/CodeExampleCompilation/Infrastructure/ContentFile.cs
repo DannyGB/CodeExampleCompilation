@@ -1,3 +1,4 @@
+using CodeExampleCompilation.Domain;
 using CodeExampleCompilation.Extensions;
 using Spectre.Console;
 

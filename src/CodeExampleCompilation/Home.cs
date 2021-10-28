@@ -4,6 +4,8 @@ using CodeExampleCompilation.Infrastructure;
 using System.Linq;
 using Microsoft.Extensions.Options;
 using System;
+using CodeExampleCompilation.Infrastructure.Display;
+using CodeExampleCompilation.Application;
 
 namespace CodeExampleCompilation
 {
