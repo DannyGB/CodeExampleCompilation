@@ -1,14 +1,16 @@
+# 🦊
 # Code Example Compilation
 
 A console application to display coding tips.
 
-## Motivation
+## 🚂 Motivation
 
-Explore the [`Spectre.Console`](https://github.com/spectreconsole/spectre.console/) library.
+To explore the [`Spectre.Console`](https://github.com/spectreconsole/spectre.console/) library.
 
-## Features
+## 👉 Features
 
-Displays pages of content and associated navigation in a console application
+* Read content from the filesystem
+* Displays content and associated navigation in a console application
 
 ## 🚀 Installation and Build
 
@@ -18,15 +20,15 @@ Displays pages of content and associated navigation in a console application
 
 ### Build
 
-1. Clone this git repository
-2. from directory containing the csproj file type `dotnet build` to build or `dotnet run` to build and run
-
+1. clone this git repository
+2. set the directory containing the content in the appsettings.json file
+3. from directory containing the csproj file type `dotnet build` to build or `dotnet run` to build and run
 
 ## 🔗 External Dependencies
 
 * The [`Spectre.Console`](https://github.com/spectreconsole/spectre.console/) library.
 
-## License
+## 📖 License
 
 © dannygb
 
