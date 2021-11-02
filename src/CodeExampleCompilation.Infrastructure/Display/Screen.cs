@@ -7,9 +7,9 @@ namespace CodeExampleCompilation.Infrastructure.Display
 {
     public class Screen : IScreen
     {
-        private readonly ILogger<Screen> _logger;
+        private readonly ILogger<IScreen> _logger;
 
-        public Screen(ILogger<Screen> logger)
+        public Screen(ILogger<IScreen> logger)
         {
             _logger = logger ?? throw new ArgumentException("logger cannot be null", nameof(logger));
         }

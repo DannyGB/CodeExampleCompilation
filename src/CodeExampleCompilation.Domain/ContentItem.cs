@@ -7,7 +7,7 @@ namespace CodeExampleCompilation.Domain
         public string Content
         { 
             get => _content;
-            set => _content = value; 
+            set => _content = value;
         }
     }
 }

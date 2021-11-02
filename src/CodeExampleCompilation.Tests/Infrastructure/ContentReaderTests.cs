@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 using CodeExampleCompilation.Infrastructure;
+using CodeExampleCompilation.Infrastructure.IO;
 using CodeExampleCompilation.Application;
-using CodeExampleCompilation.Application.IO;
+using CodeExampleCompilation.Domain;
 using AutoFixture;
 using AutoFixture.AutoMoq;
 using AutoFixture.NUnit3;
@@ -14,7 +15,7 @@ using FluentAssertions;
 
 namespace CodeExampleCompilation.Tests.Infrastructure
 {
-    public class Tests
+    public class ContentReaderTests
     {
         private IFixture _fixture;
         private Mock<IDirectory> _directory = new Mock<IDirectory>();
@@ -43,30 +44,12 @@ namespace CodeExampleCompilation.Tests.Infrastructure
                 .ReturnsAsync("{ \"Header\": \"Test\", \"Content\": \"VGhpcyBpcyBzb21lIHRlc3QgY29udGVudA==\" }");
 
             var contentReader = _fixture.Create<ContentReader>();
-            var content = await contentReader.Read("test");
+            var content = await contentReader.Read("test");                
 
             content.Should().NotBeNull();
             content.First().FilePath.Should().Be("test");
             content.First().ContentItem.Header.Should().Be("Test");
-            content.First().ContentItem.Content.Should().Be("This is some test content");
-        }
-
-        [Test]        
-        public async Task Should_Fail_On_Non_Base64_Content()
-        {
-            _directory.Setup(x => x.EnumerateDirectories(It.IsAny<string>()))
-                .Returns(new List<string>
-                {
-                    "test"
-                });
-
-            _file.Setup(x => x.ReadAllTextAsync($"test/{Constants.ContentFileName}"))
-                .ReturnsAsync("{ \"Header\": \"Test\", \"Content\": \"Non base64 string\" }");
-
-            var contentReader = _fixture.Create<ContentReader>();
-            Func<Task<IEnumerable<ContentMetaData>>> content = () => contentReader.Read("test");
-            
-            await content.Should().ThrowAsync<FormatException>();
+            content.First().ContentItem.Content.Should().Be("VGhpcyBpcyBzb21lIHRlc3QgY29udGVudA==");
         }
 
         [Test]        
