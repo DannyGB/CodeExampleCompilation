@@ -4,6 +4,7 @@ using Microsoft.Extensions.Options;
 using System;
 using CodeExampleCompilation.Infrastructure.Display;
 using CodeExampleCompilation.Application;
+using CodeExampleCompilation.Infrastructure;
 
 namespace CodeExampleCompilation
 {
@@ -11,8 +12,8 @@ namespace CodeExampleCompilation
     {
         private readonly AppSettings _settings;
 
-        public Home(IScreen screen, IContentReader contentReader, IOptions<AppSettings> options)
-            : base(screen, contentReader)
+        public Home(IScreen screen, IContentReader contentReader, IOptions<AppSettings> options, ITitle title)
+            : base(screen, contentReader, title)
         {             
             options = options ?? throw new ArgumentException("options cannot be null", nameof(options));
             _settings = options.Value;
@@ -20,6 +21,7 @@ namespace CodeExampleCompilation
 
         public override void Render() 
             => Screen.Draw(Constants.QUIT_KEY,
+                () => GetTitle(),
                 () => GetMenu(_settings.Root).AddQuitNavigationItem().GetMenuPanel(),
                 () => new Panel("Thanks for using this app, I hope you find it both entertaining and useful. Feel free to add your feedback to the [link=https://github.com/DannyGB/CodeExampleCompilation]GitHub repo[/] or add a Pull Request for any issues you might find."),
                 (action) => GetMenu(_settings.Root).ExecuteAction(action))

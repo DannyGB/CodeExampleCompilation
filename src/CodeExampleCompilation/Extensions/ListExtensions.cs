@@ -1,21 +1,26 @@
 using System.Collections.Generic;
-using System.Linq;
 using CodeExampleCompilation.Application;
+using CodeExampleCompilation.Domain;
 using CodeExampleCompilation.Infrastructure;
 using CodeExampleCompilation.Infrastructure.Display;
+
 
 namespace CodeExampleCompilation.Extensions
 {
     public static class ListExtensions
     {
-        public static Menu CreateMenu(this IList<ContentMetaData> list, IContentReader contentReader, IScreen screen)
+        public static Menu CreateMenu(this IList<ContentFile> list, IContentReader contentReader, IScreen screen, ITitle title)
         {
             var menu = new Menu();
+            var i = 1;
 
-            for (int i = 0; i < list.Count(); i++)
+            foreach(var item in list)
             {
-                var item = list[i];
-                menu.Add((i+1).ToString(), new NavigationItem(list[i].ContentItem.Header, new Page(new ContentFile(item.FilePath, item.ContentItem), screen, contentReader).Render));
+                menu.Add
+                (
+                    (i++).ToString(),
+                    new NavigationItem(item.ContentItem.Header, new Page(item, screen, contentReader, title).Render)
+                );
             }
 
             return menu;

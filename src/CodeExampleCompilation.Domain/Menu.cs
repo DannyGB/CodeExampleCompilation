@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace CodeExampleCompilation.Infrastructure
+namespace CodeExampleCompilation.Domain
 {
     public class Menu : Dictionary<string, NavigationItem>
     {

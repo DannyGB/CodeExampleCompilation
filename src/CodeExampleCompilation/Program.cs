@@ -1,13 +1,10 @@
 ﻿using System.IO;
-using CodeExampleCompilation.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
-using CodeExampleCompilation.Infrastructure.Display;
-using CodeExampleCompilation.Application;
 using Microsoft.Extensions.Logging;
 using NLog;
 using NLog.Extensions.Logging;
-using CodeExampleCompilation.Infrastructure.Partials;
+using CodeExampleCompilation.Extensions;
 
 namespace CodeExampleCompilation
 {
@@ -42,14 +39,8 @@ namespace CodeExampleCompilation
                 builder.ClearProviders();
                 builder.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
                 builder.AddNLog(configuration);
-            });
-
-            services
-                .AddTransient<IContentReader, ContentReader>()
-                .AddTransient<IScreen, Screen>()
-                .AddSingleton<IWelcome, Welcome>()
-                .AddTransient<Home>()
-                .Configure<AppSettings>(configuration.GetSection("AppSettings"));
+            })
+            .AddServices(configuration);
         }
     }
 }

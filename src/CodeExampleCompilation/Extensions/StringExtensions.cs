@@ -8,8 +8,6 @@ namespace CodeExampleCompilation.Extensions
 
         public static string AddHeaderStyle(this string str) => $"[green]{str}[/]";
 
-        public static string AddExampleStyle(this string str) => $"[bold blue]{str}[/]";
-
         public static string AddMenuStyle(this string str) => $"[bold blue]{str}[/]";
     }
 }

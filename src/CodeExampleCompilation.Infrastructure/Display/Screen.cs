@@ -1,5 +1,4 @@
 using System;
-using CodeExampleCompilation.Infrastructure.Partials;
 using Microsoft.Extensions.Logging;
 using Spectre.Console;
 using Spectre.Console.Rendering;
@@ -9,16 +8,15 @@ namespace CodeExampleCompilation.Infrastructure.Display
     public class Screen : IScreen
     {
         private readonly ILogger<Screen> _logger;
-        private readonly IWelcome _welcome;
 
-        public Screen(ILogger<Screen> logger, IWelcome welcome)
+        public Screen(ILogger<Screen> logger)
         {
             _logger = logger ?? throw new ArgumentException("logger cannot be null", nameof(logger));
-            _welcome = welcome ?? throw new ArgumentException("logger cannot be null", nameof(welcome));
         }
 
         public void Draw(
             string terminatorKey,
+            Func<IRenderable> header,
             Func<IRenderable> menu,
             Func<IRenderable> content,
             Action<string> onSelect)
@@ -32,7 +30,7 @@ namespace CodeExampleCompilation.Infrastructure.Display
                 _logger.LogDebug("Entered message loop");
 
                 AnsiConsole.Clear();
-                _welcome.Render();
+                AnsiConsole.Write(header());
                 AnsiConsole.Write(new Grid()
                     .AddColumn(new GridColumn())
                     .AddColumn(new GridColumn())

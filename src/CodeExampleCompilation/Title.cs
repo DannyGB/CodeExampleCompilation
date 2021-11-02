@@ -1,13 +1,13 @@
-using System.Threading.Tasks;
 using Spectre.Console;
+using Spectre.Console.Rendering;
 
-namespace CodeExampleCompilation.Infrastructure.Partials
+namespace CodeExampleCompilation.Infrastructure
 {
-    public class Welcome : IWelcome
+    public class Title : ITitle
     {
-        public void Render()
+        public IRenderable GetTitle()
         {
-            var grid = new Grid()
+            return new Grid()
                 .AddColumn()
                 .AddRow(new Panel(new FigletText("Welcome")
                     .Centered()
@@ -16,8 +16,6 @@ namespace CodeExampleCompilation.Infrastructure.Partials
                     .Centered())
                     .Expand())
             ;
-
-            AnsiConsole.Write(grid);
         }
     }
 }

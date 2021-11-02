@@ -7,6 +7,7 @@ namespace CodeExampleCompilation.Infrastructure.Display
     {
         void Draw(
             string terminatorKey,
+            Func<IRenderable> header,
             Func<IRenderable> menu,
             Func<IRenderable> content,
             Action<string> onSelect);

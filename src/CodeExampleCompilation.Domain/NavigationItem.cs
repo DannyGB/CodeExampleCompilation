@@ -1,7 +1,6 @@
 using System;
-using System.Threading.Tasks;
 
-namespace CodeExampleCompilation.Infrastructure
+namespace CodeExampleCompilation.Domain
 {
     public class NavigationItem
     {
