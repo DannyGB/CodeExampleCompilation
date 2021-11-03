@@ -1,3 +1,5 @@
+[![.NET](https://github.com/DannyGB/CodeExampleCompilation/actions/workflows/build.yml/badge.svg)](https://github.com/DannyGB/CodeExampleCompilation/actions/workflows/build.yml)
+
 # 🦊
 # Code Example Compilation
 
