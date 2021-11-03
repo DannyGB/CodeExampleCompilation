@@ -1,4 +1,8 @@
-[![.NET](https://github.com/DannyGB/CodeExampleCompilation/actions/workflows/build.yml/badge.svg)](https://github.com/DannyGB/CodeExampleCompilation/actions/workflows/build.yml)
+<p align="right">
+  <a href="https://github.com/DannyGB/CodeExampleCompilation/actions/workflows/build.yml">
+      <img src="https://github.com/DannyGB/CodeExampleCompilation/actions/workflows/build.yml/badge.svg">
+  </a>    
+</p>
 
 # 🦊
 # Code Example Compilation
